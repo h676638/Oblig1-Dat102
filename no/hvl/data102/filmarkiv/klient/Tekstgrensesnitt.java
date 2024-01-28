@@ -1,5 +1,6 @@
 package no.hvl.data102.filmarkiv.klient;
 
+
 import java.util.Scanner;
 
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
@@ -49,4 +50,3 @@ public void skrivUtStatistikk(FilmarkivADT arkiv) {
 // TODO
 }
 // osv ... andre metoder
-}
