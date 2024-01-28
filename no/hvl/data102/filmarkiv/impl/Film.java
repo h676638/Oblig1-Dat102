@@ -5,26 +5,10 @@ import java.util.Objects;
 
 public class Film {
 
-    private  int serieNummer;
-    private  String filmProdusent;
-    private String filmTittel;
-    private int laseringsÅr;
-    private Sjanger sjanger;
-    private String filmSelskap;
 
 
 
-    public Film() {
 
-    }
-    public Film(int serieNummer, String filmProdusent, String filmTittel, int lanseringsÅr, Sjanger sjanger, String filmSelskap) {
-        this.serieNummer = serieNummer;
-        this.filmProdusent = filmProdusent;
-        this.filmTittel = filmTittel;
-        this.laseringsÅr = lanseringsÅr;
-        this.sjanger = sjanger;
-        this.filmSelskap = filmSelskap;
-    }
     @Override
     public int hashCode() {
         return Objects.hash(filmProdusent, filmSelskap, filmTittel, laseringsÅr, serieNummer, sjanger);
@@ -42,7 +26,6 @@ public class Film {
                 && Objects.equals(filmTittel, other.filmTittel) && laseringsÅr == other.laseringsÅr
                 && serieNummer == other.serieNummer && Objects.equals(sjanger, other.sjanger);
     }
-    public int getSerieNummer() { return serieNummer; }
     public void setSerieNummer(int serieNummer) {
         this.serieNummer = serieNummer;
     }
@@ -64,16 +47,36 @@ public class Film {
     public void setLaseringsÅr(int laseringsÅr) {
         this.laseringsÅr = laseringsÅr;
     }
-    public Sjanger getSjanger() {
+    public String getSjanger() {
         return sjanger;
     }
-    public void setSjanger(Sjanger sjanger) {
+    public void setSjanger(String sjanger) {
         this.sjanger = sjanger;
     }
     public String getFilmSelskap() {
         return filmSelskap;
     }
     public void setFilmSelskap(String filmSelskap) {
+        this.filmSelskap = filmSelskap;
+    }
+    private  int serieNummer;
+    private  String filmProdusent;
+    private String filmTittel;
+    private int laseringsÅr;
+    private String sjanger;
+    private String filmSelskap;
+
+
+
+    public void Film() {
+
+    }
+    public void Flim(int serieNummer, String filmProdusent, String filmTittel, int lanseringsÅr, String  sjanger, String filmSelskap) {
+        this.serieNummer = serieNummer;
+        this.filmProdusent = filmProdusent;
+        this.filmTittel = filmTittel;
+        this.laseringsÅr = lanseringsÅr;
+        this.sjanger = sjanger;
         this.filmSelskap = filmSelskap;
     }
 
