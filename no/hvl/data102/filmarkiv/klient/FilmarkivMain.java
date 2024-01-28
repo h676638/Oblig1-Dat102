@@ -114,7 +114,7 @@ public class Tekstgrensesnitt {
 public int lesInt(String string) {
 	// TODO Auto-generated method stub
 	return 0;
-}
+}''
 
 // Skriver ut en film med alle opplysninger på skjerm (husk tekst for sjanger)
 	public void skrivUtFilm(Film film) {
