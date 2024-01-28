@@ -1,7 +1,7 @@
 package no.hvl.data102.filmarkiv.klient;
 
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
-import no.hvl.data102.filmarkiv.impl.Filmm;
+import no.hvl.data102.filmarkiv.impl.Film;
 
 public class Meny {
 	
@@ -13,8 +13,8 @@ public class Meny {
 			this.filmarkiv = filmarkiv;
 		}
 		public void start() {
-			 filmarkiv.leggTilFilm(new Filmm( "Direktør", "Film", 2024, Sjanger.Dreama, "Selskap1")); 
-			 filmarkiv.leggTilFilm(new Filmm( "Direktør", "Film", 2024, Sjanger.Dreama, "Selskap1")); 
+			 filmarkiv.leggTilFilm(new Film( "Direktør", "Film", 2024, Sjanger.Dreama, "Selskap1")); 
+			 filmarkiv.leggTilFilm(new Film( "Direktør", "Film", 2024, Sjanger.Dreama, "Selskap1")); 
 	// legg inn en del forhåndsdefinerte filmer for å teste metodene
 
 	  
