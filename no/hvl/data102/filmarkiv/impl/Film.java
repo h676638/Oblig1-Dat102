@@ -42,13 +42,10 @@ public class Film {
                 && Objects.equals(filmTittel, other.filmTittel) && laseringsÅr == other.laseringsÅr
                 && serieNummer == other.serieNummer && Objects.equals(sjanger, other.sjanger);
     }
-    public int getSerieNummer() {
-        return serieNummer;
-    }
+    public int getSerieNummer() { return serieNummer; }
     public void setSerieNummer(int serieNummer) {
         this.serieNummer = serieNummer;
     }
-
     public String getFilmProdusent() {
         return filmProdusent;
     }
