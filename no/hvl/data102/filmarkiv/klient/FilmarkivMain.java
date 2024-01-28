@@ -2,7 +2,7 @@ package no.hvl.data102.filmarkiv.klient;
 
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
 import no.hvl.data102.filmarkiv.impl.Filmarkiv;
-import no.hvl.data102.filmarkiv.impl.Filmm;
+import no.hvl.data102.filmarkiv.impl.Film;
 import java.util.Scanner;
 
 public class FilmarkivMain {
