@@ -6,6 +6,8 @@ import no.hvl.data102.filmarkiv.impl.Film;
 
 import no.hvl.data102.filmarkiv.impl.Sjanger;
 
+import java.util.Scanner;
+
 
 public class Meny {
 	
@@ -17,25 +19,29 @@ public class Meny {
 			this.filmarkiv = filmarkiv;
 		}
 		public void start() {
-			filmarkiv.leggTilFilm(new Film(1, "Direktør", "Film", 2024, Sjanger.DRAMA, "Selskap1"));
-		 	filmarkiv.leggTilFilm(new Film(2, "Direktør", "Film", 2024, Sjanger.DRAMA, "Selskap1"));
+			filmarkiv.leggTilFilm(new Film(0, "Direktør", "Film", 2024, Sjanger.DRAMA, "Selskap1"));
+		 	filmarkiv.leggTilFilm(new Film(1, "Direktør", "Film", 2024, Sjanger.DRAMA, "Selskap1"));
 			// legg inn en del forhåndsdefinerte filmer for å teste metodene
 
 			boolean exit = false;
 			while (!exit) {
-				tekstgr.visHovedMeny();
-				int valg = tekstgr.lesInt("Velg en film");
+				Scanner scanner = new Scanner(System.in);
+				System.out.println("1: Arkiver en ny film");
+				System.out.println("2: Slett en eksisterende film");
+				System.out.println("3: Søk for en eksisterende film via tittel");
+				System.out.println("4: Søk for en eksisterende film via produsent");
+				System.out.println("5: Skriv ut statistikk");
+				System.out.println("0: Avslutt programmet");
+				String valg = scanner.nextLine();
 
 				switch(valg) {
-					case 1:
-						Film nyFilm = tekstgr.lesFilm();
+					case "1":
+						Film nyFilm = tekstgr.lesFilm(filmarkiv);
 						filmarkiv.leggTilFilm(nyFilm);
 						break;
 
-					case 2:
-						int filmnr = tekstgr.lesInt("Velg en filmnummer du vil seltte det.");
-						boolean success = filmarkiv.slettFilm(filmnr);
-						if (success) {
+					case "2":
+						if (tekstgr.slettFilm(filmarkiv)) {
 							System.out.println("Film er selettet");
 						}
 						else {
@@ -43,22 +49,20 @@ public class Meny {
 						}
 						break;
 
-					case 3:
-						String delstreng = tekstgr.lesTekst("Søk delstrengen du vil søke");
-						Film[]prodresultater = filmarkiv.soekTittel(delstreng);
-						tekstgr.skrivUtFilmListe (prodresultater);
+					case "3":
+						System.out.println("Søk delstrengen du vil søke");
+						tekstgr.skrivUtFilmDelstrengITittel(filmarkiv, scanner.nextLine());
 						break;
 
-					case 4:
-						String produsent = tekstgr.lesTekst("Skriv produsent du vil søke etter");
-						Film[] prodResultater = filmarkiv.soekProdusent(produsent);
-						tekstgr.skrivUtFilmListe(prodResultater);
+					case "4":
+						System.out.println("Skriv produsent du vil søke etter");
+						tekstgr.skrivUtFilmProdusent(filmarkiv, scanner.nextLine());
 						break;
-					case 5:
+					case "5":
 						tekstgr.skrivUtStatistikk(filmarkiv);
 						break;
 
-					case 0:
+					case "0":
 						exit = true;
 						System.out.println("Progaramet avsluttes");
 						break;
