@@ -25,7 +25,7 @@ public class Filmarkiv2 implements FilmarkivADT {
         LinearNode<Film> previous = null;
 
         while (current != null) {
-            if (current.data.getNummer() == filmnr) {
+            if (current.data.getSerieNummer() == filmnr) {
                 if (previous == null) {
                     start = current.next;
                 } else {
@@ -44,7 +44,7 @@ public class Filmarkiv2 implements FilmarkivADT {
     public Film finnFilm(int nr) {
         LinearNode<Film> current = start;
         while (current != null) {
-            if (current.data.getNummer() == nr) {
+            if (current.data.getSerieNummer() == nr) {
                 return current.data;
             }
             current = current.next;
@@ -59,7 +59,7 @@ public class Filmarkiv2 implements FilmarkivADT {
 
         LinearNode<Film> current = start;
         while (current != null) {
-            if (current.data.getTittel().contains(delstreng)) {
+            if (current.data.getFilmTittel().contains(delstreng)) {
                 temp[found++] = current.data;
             }
             current = current.next;
@@ -67,7 +67,6 @@ public class Filmarkiv2 implements FilmarkivADT {
 
         return trimTab(temp, found);
     }
-
 
     @Override
     public Film[] soekProdusent(String delstreng) {
@@ -76,7 +75,7 @@ public class Filmarkiv2 implements FilmarkivADT {
 
         LinearNode<Film> current = start;
         while (current != null) {
-            if (current.data.getProdusent().contains(delstreng)) {
+            if (current.data.getFilmProdusent().contains(delstreng)) {
                 temp[found++] = current.data;
             }
             current = current.next;
@@ -84,7 +83,6 @@ public class Filmarkiv2 implements FilmarkivADT {
 
         return trimTab(temp, found);
     }
-
 
     @Override
     public int antall(Sjanger sjanger) {
